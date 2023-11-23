@@ -1,0 +1,49 @@
+import { useEffect, useState } from "react";
+import "./App.css";
+import MyComponent from "./components/Test";
+import axios from "axios";
+
+function App() {
+  const [data, setData] = useState([]);
+  const [query, setQuery] = useState("");
+  useEffect(() => {
+    const apiUrl = "https://dummyjson.com/users";
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        setData(response.data.users);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+  return (
+    <div style={searchBarStyle}>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        style={inputStyle}
+      />
+      <MyComponent data={data} query={query} />
+    </div>
+  );
+}
+const searchBarStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  gap: "20px",
+  width: "90%",
+  margin: "auto",
+};
+
+const inputStyle = {
+  padding: "8px",
+  marginRight: "8px",
+  fontSize: "14px",
+};
+
+export default App;
