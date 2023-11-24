@@ -37,13 +37,16 @@ const searchBarStyle = {
   flexDirection: "column",
   gap: "20px",
   width: "90%",
-  margin: "auto",
+  margin: "10px auto 0",
 };
 
 const inputStyle = {
+  borderRadius: "5px",
+  border: "1px solid #a0a0a0",
   padding: "8px",
   marginRight: "8px",
   fontSize: "14px",
+  boxShadow: "0 0 8px #b0dee6",
 };
 
 export default App;

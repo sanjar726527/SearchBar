@@ -5,3 +5,14 @@
   font-family: "Roboto", sans-serif;
   font-weight: 500;
 }
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c2d5ff;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-button {
+  display: none; /* Hide the scrollbar buttons */
+}
